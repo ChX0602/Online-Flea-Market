@@ -18,7 +18,7 @@ and open the template in the editor.
             <nav id="navigation">
                 <ul id="nav">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="#">For Buyers</a></li>
+                    <li><a href="Buyer.php">For Buyers</a></li>
                     <li><a href="#">For Sellers</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>

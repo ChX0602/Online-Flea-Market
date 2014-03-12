@@ -130,3 +130,25 @@ footer
     margin: 0px 0 10px 10px;
     padding: 10px;
 }
+.itemTable
+{
+    width: 750px;
+    height: 250px;
+    margin: 10px 10px 10px 0;
+    border: 3px solid #E3E3E3;
+    border-radius: 10px;
+    moz-border-radius: 10px;
+}
+
+.itemTable tr th, .itemTable tr td
+{
+    text-align: left;
+    padding: 0px 5 px 0 5px;
+}
+
+.itemTable img
+{
+    padding: 0px 10px 10px 10px;
+    height: 150px;
+    width: 150px;
+}
