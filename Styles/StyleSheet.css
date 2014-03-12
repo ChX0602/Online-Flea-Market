@@ -48,11 +48,12 @@ body p
 #sidebar
 {
     float: right;
-    width: 250px;
+    width: 400px;
     height: 400px;
     margin: 20px 10px;
     padding: 10px;
     border: 2px solid #E3E3E3;
+    background-image: url(../Images/dog.jpg);
 }
 
 footer
@@ -65,7 +66,8 @@ footer
     text-align: center;
     color: #fff;
     text-shadow: 0.1em 0.1em #333;
-    background-image: url(../Images/bar_background.png);
+    //background-image: url(../Images/bar_background.png);
+    background-color: black;
 }
 
 #navigation
@@ -74,7 +76,7 @@ footer
     border: 3px solid #E3E3E3;
     margin-top: 20px;
     text-shadow: 0.1em 0.1em #333;
-    background-image: url(../Images/bar_background.png);
+    background-color: black;
 }
 
 #nav
