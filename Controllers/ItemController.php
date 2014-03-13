@@ -73,11 +73,30 @@ class ItemController {
                       </tr>
                       
                       <tr>
+                        <th>Msg: </th>
                         <td colspan = '2' >$value->review</td>
                       </tr>
                     </table>";  
        }
        return $result;
+   }
+   
+   function getItemTypes()
+   {
+       $itemModel = new itemModel();
+       return $itemModel->getItemTypes();
+   }
+   
+   function getItemByType($type)
+   {
+       $itemModel = new itemModel();
+       return $itemModel->getItemByType($type);
+   }
+   
+   function getItemById($id)
+   {
+       $itemModel = new itemModel();
+       return $itemModel->getItemById($id);
    }
 }
 ?>
