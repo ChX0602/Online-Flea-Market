@@ -152,3 +152,15 @@ footer
     height: 150px;
     width: 150px;
 }
+
+.inputField
+{
+    width : 280px;
+    padding : 4px;
+}
+
+label{
+    width : 100px;
+    float: left;
+    font-weight: bold;
+}

@@ -98,5 +98,45 @@ class ItemController {
        $itemModel = new itemModel();
        return $itemModel->getItemById($id);
    }
+   
+   function getImages()
+   {
+       $temp = opendir("Images/Items");
+       while ($img = readdir($temp))
+       {
+           $images[] = $img;
+       }
+       closedir($temp);
+       $image_array = array();
+       foreach($images as $image)
+       {
+           array_push($image_array, $image);
+       }
+       return $this->getOptionValues($image_array);
+   }
+   
+   function updateItem()
+   {
+       
+   }
+   
+   function insertItem()
+   {
+       $name = $_POST["txtName"];
+       $price = $_POST["txtPrice"];
+       $age = $_POST["txtAge"];
+       $image = $_POST["ddlImage"];
+       $type = $_POST["ddlType"];
+       $review = $_POST["txtReview"];
+       
+       $newItem = new ItemEntity(-1, $name, $type, $price, $age, $image, $review);
+       $itemModel = new itemModel();
+       $itemModel->insertItem($newItem);     
+   }
+   
+   function deleteItem()
+   {
+       
+   }
 }
 ?>

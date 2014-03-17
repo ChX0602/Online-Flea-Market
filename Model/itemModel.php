@@ -80,7 +80,7 @@ class itemModel {
                 mysql_real_escape_string($item->type),
                 mysql_real_escape_string($item->price),
                 mysql_real_escape_string($item->age),
-                mysql_real_escape_string("Images/Items/".$Items->image),
+                mysql_real_escape_string("Images/Items/".$item->image),
                 mysql_real_escape_string($item->review));
         $this->performQuery($query);
     }
