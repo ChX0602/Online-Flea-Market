@@ -20,8 +20,9 @@ class ItemEntity {
     public $age;
     public $image;
     public $review;
+    public $is_available;
     
-    function __construct($id, $name, $type, $price, $age, $image, $review) {
+    function __construct($id, $name, $type, $price, $age, $image, $review, $is_available) {
        $this->id = $id;
        $this->name = $name;
        $this->type = $type;
@@ -29,5 +30,6 @@ class ItemEntity {
        $this->age = $age;
        $this->image = $image;
        $this->review = $review;
+       $this->is_available = $is_available;
     }
 }

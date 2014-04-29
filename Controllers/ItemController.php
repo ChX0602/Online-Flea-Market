@@ -33,7 +33,7 @@ class ItemController {
                Select a type:
                <select name = 'types' >
                <option value = '%' >All</option>".$this->getOptionValues($itemModel->getItemTypes()).
-               "</select>
+               "<lect>
                    <input type = 'submit' value = 'Search'/>
                    </form>";
        return $result;
@@ -49,6 +49,7 @@ class ItemController {
        $result = "";
        foreach ($itemArray as $key => $value)
        {
+           if ($value->is_available == 1) {
           $result = $result.
                   "<table class = 'itemTable'>
                       <tr>
@@ -76,7 +77,15 @@ class ItemController {
                         <th>Msg: </th>
                         <td colspan = '2' >$value->review</td>
                       </tr>
+                      
+                      <tr>
+                        <td>
+                        <a href = 'confirmBuy.php?id=$value->id'>Buy</a><br/>
+                        </td>
+                      </tr>
+                      
                     </table>";  
+           }
        }
        return $result;
    }
@@ -132,6 +141,11 @@ class ItemController {
        $newItem = new ItemEntity(-1, $name, $type, $price, $age, $image, $review);
        $itemModel = new itemModel();
        $itemModel->insertItem($newItem);     
+   }
+   
+   function setNotAvailable($id) {
+       $itemModel = new itemModel();
+       $itemModel->changeAvailability($id, 0);
    }
    
    function deleteItem()

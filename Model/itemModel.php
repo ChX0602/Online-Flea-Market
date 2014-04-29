@@ -40,7 +40,8 @@ class itemModel {
             $age = $row[4];
             $image = $row[5];
             $review = $row[6];
-            $item = new ItemEntity(-1, $name, $type, $price, $age, $image, $review);
+            $is_available = $row[7];
+            $item = new ItemEntity($row[0], $name, $type, $price, $age, $image, $review, $is_available);
             array_push($result_array, $item);
         }
         mysql_close();
@@ -87,7 +88,7 @@ class itemModel {
     
     function updateItem($id, ItemIdentity $item)
     {
-        $query = $query = sprintf("UPDATE item
+        $query = sprintf("UPDATE item
                 SET name = '%s', type = '%s', price = '%s', age = '%s', image = '%s', review = '%s' 
                 WHERE id = $id",
                 mysql_real_escape_string($item->name),
@@ -96,6 +97,14 @@ class itemModel {
                 mysql_real_escape_string($item->age),
                 mysql_real_escape_string("Images/Items/".$Items->image),
                 mysql_real_escape_string($item->review));
+        $this->performQuery($query);
+    }
+    
+    function changeAvailability($id, $ava) {
+        $query = sprintf("UPDATE item
+                SET is_available = '%s' 
+                WHERE id = $id",
+                mysql_real_escape_string($ava));
         $this->performQuery($query);
     }
     
