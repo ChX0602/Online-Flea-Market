@@ -27,5 +27,5 @@ session_start();
         echo "<br /><a href='index.php'>Back to home page</a>";
         echo "<br /><a href='register.php'>Register!</a>";
     }
-   
+
 ?>
