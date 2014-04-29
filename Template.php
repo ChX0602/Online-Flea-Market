@@ -21,7 +21,8 @@ and open the template in the editor.
                     <li><a href="Buyer.php">For Buyers</a></li>
                     <li><a href="#">For Sellers</a></li>
                     <li><a href ="Management.php">Management</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="register.php" id="login" onclick="reg()">Registration</a></li>
+                    <li><a href="signinform.php" id="signin" onclick="login()">Sign in</a></li>
                 </ul>
             </nav>
             
