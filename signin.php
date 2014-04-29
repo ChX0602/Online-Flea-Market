@@ -1,8 +1,9 @@
-<?php include_once("db.php");
+<?php include("db.php");
 session_start();
-?>
 
-<?php
+$title = "";
+
+
     $uname = $_POST['name']; 
     $pass = $_POST['pwd'];
     
@@ -12,20 +13,21 @@ session_start();
     $qury = mysql_query($sql);
     
     $result = mysql_fetch_array($qury);
-    
+    $content="";
     if($result[0]>0) 
     {
-        echo "Login successful!";
         $_SESSION['userName'] = $uname;
-        echo "<br />Welcome ".$_SESSION['userName']."!";
-        echo "<br /><a href='index.php'>Back to home page</a>";
-        echo "<br /><a href='logout.php'>LogOut</a>";
+        $content = "
+        Login successful!
+        <br />Welcome ".$_SESSION['userName']."!
+       <br /><a href='index.php'>Back to home page</a>
+       <br /><a href='logout.php'>LogOut</a>";
     }
     else
     {
-        echo "Login Failed";
-        echo "<br /><a href='index.php'>Back to home page</a>";
-        echo "<br /><a href='register.php'>Register!</a>";
+        $content = "Login Failed
+       <br /><a href='index.php'>Back to home page</a>;
+        <br /><a href='register.php'>Register!</a>";
     }
-
+include "Template.php";
 ?>

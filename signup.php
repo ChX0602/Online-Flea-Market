@@ -1,6 +1,6 @@
-<?php include_once("db.php")?>
-
-<?php
+<?php include_once("db.php");
+$title = "";
+$content = "";
         $user = $_POST['n'];
         $password = $_POST['p'];
         $id = $_POST['id'];
@@ -9,13 +9,14 @@
 
         if (!$qury)
         {
-            echo "Failed ".mysql_error();
-            echo "<br /><a href='signup.php'>SignUpAgain</a>";
+            $content = "Failed ".mysql_error()
+           ."<br /><a href='signup.php'>SignUpAgain</a>";
         }
         else
         {
-            echo "Successful.";
-            echo "<br /><a href='index.php'>Back to home page</a>";
+            $content = 
+           "Successful.
+            <br /><a href='index.php'>Back to home page</a>";
         }
-     
+     include "Template.php";
 ?>
